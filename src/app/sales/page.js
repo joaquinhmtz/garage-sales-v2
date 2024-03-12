@@ -7,7 +7,7 @@ const products = [
     {
         id: 1,
         name: 'Basic Tee',
-        href: '#',
+        href: '/sales/detail-sale',
         imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
         imageAlt: "Front of men's Basic Tee in black.",
         price: '$35',
@@ -79,6 +79,13 @@ export default function SalePage () {
                                             </a>
                                         </h3>
                                         <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+
+                                        <a
+                                            href={"#"}
+                                            className="text-xs relative z-10 rounded-full bg-gray-50 px-2 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                                        >
+                                            Apartado
+                                        </a>
                                     </div>
                                     <p className="text-sm font-medium text-gray-900">{product.price}</p>
                                 </div>
