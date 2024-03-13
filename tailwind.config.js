@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,5 +18,18 @@ module.exports = {
     },
   },
   plugins: [
+    // Define a Tailwind CSS plugin
+    plugin(({ addVariant, e }) => {
+      // Add a custom variant, "sidebar-expanded"
+      addVariant("sidebar-expanded", ({ modifySelectors, separator }) => {
+        modifySelectors(
+          ({ className }) =>
+            // Modify selectors to apply the custom variant
+            `.sidebar-expanded .${e(
+              `sidebar-expanded${separator}${className}`
+            )}`
+        );
+      });
+    }),
   ],
 };
