@@ -38,7 +38,7 @@ export default function LayoutContent ({ children }) {
                     ) : (
                         <HeaderApp/>
                     )}
-                    <div className="w-full h-full overflow-y-auto p-4">
+                    <div className="w-full h-full overflow-y-auto p-4 mt-6">
                         {children}
                     </div>
                 </div>

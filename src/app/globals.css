@@ -13,6 +13,10 @@ body {
     sans-serif;
 }
 
+textarea {
+  resize: none;
+}
+
 @layer base {
   h2 {
     @apply text-base font-semibold mb-3;
