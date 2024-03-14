@@ -23,14 +23,12 @@ export default function LayoutContent ({ children }) {
         <>
             <div className="flex h-screen bg-gray-200">
                 
-                <div>
-                    <SidenavbarApp 
-                    sidebarOpen={sidebarOpen} 
-                    setSidebarOpen={setSidebarOpen}
-                    />
-                </div>
+                <SidenavbarApp 
+                sidebarOpen={sidebarOpen} 
+                setSidebarOpen={setSidebarOpen}
+                />
 
-                <div className="relative flex flex-col flex-1 lg:overflow-y-auto lg:overflow-x-hidden">
+                <div className="flex flex-col flex-1 overflow-y-auto">
                     {isMobile ? (
                         <MobileHeaderApp 
                         sidebarOpen={sidebarOpen} 
@@ -40,13 +38,12 @@ export default function LayoutContent ({ children }) {
                     ) : (
                         <HeaderApp/>
                     )}
-                    <main>
+                    <div className="w-full h-full overflow-y-auto p-4">
                         {children}
-                    </main>
+                    </div>
                 </div>
 
             </div>
-            {/* <Sidebar></Sidebar> */}
         </>
     )
 }

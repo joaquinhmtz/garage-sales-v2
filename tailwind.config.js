@@ -19,6 +19,7 @@ module.exports = {
   },
   plugins: [
     // Define a Tailwind CSS plugin
+    require('@tailwindcss/forms'),
     plugin(({ addVariant, e }) => {
       // Add a custom variant, "sidebar-expanded"
       addVariant("sidebar-expanded", ({ modifySelectors, separator }) => {
