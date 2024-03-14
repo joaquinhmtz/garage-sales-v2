@@ -64,7 +64,7 @@ export default function SidenavbarApp ({ sidebarOpen, setSidebarOpen }) {
                         <button 
                         onClick={() => setSidebarExpanded(!sidebarExpanded)}
                         className={`${
-                            sidebarExpanded ? "p-4" : "p-3"
+                            sidebarExpanded ? "p-3" : "p-3"
                         } hover:bg-gray-300 hover:rounded-md`}
                         >
                             <Bars3Icon className={ `${ sidebarExpanded ? "h-8 w-8" : "h-6 w-6" } text-gray-800` } />
@@ -79,7 +79,7 @@ export default function SidenavbarApp ({ sidebarOpen, setSidebarOpen }) {
                     </div>
                 </div>
 
-                <ul>
+                <ul className={ `${ sidebarExpanded ? "mt-0" : "mt-5" }` }>
                     { routes.map((item, index) => (
                         <li 
                         key={index}>
