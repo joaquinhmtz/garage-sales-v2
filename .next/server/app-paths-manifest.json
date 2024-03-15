@@ -1,3 +1,4 @@
 {
-  "/app/content/products/form/page": "app/app/content/products/form/page.js"
+  "/app/content/products/form/page": "app/app/content/products/form/page.js",
+  "/app/content/products/page": "app/app/content/products/page.js"
 }

@@ -21,7 +21,7 @@ export default function LayoutContent ({ children }) {
 
     return (
         <>
-            <div className="flex h-screen bg-gray-200">
+            <div className="flex h-screen bg-gray-100">
                 
                 <SidenavbarApp 
                 sidebarOpen={sidebarOpen} 
@@ -38,7 +38,7 @@ export default function LayoutContent ({ children }) {
                     ) : (
                         <HeaderApp/>
                     )}
-                    <div className="w-full h-full overflow-y-auto p-4 mt-6">
+                    <div className="w-full h-full overflow-y-auto p-6">
                         {children}
                     </div>
                 </div>

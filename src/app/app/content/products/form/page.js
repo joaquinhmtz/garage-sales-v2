@@ -1,8 +1,11 @@
+import { PhotoIcon } from "@heroicons/react/24/outline"
+
 export default function FormProduct () {
+
     return (
         <>
             <form className="flex flex-col items-center justify-center">
-                <div className="h-full rounded-3xl ring-1 ring-gray-200 bg-white p-6">
+                <div className="h-full rounded-md ring-1 ring-gray-200 bg-white p-6">
                     <div className="space-y-12">
                         <div className="border-b border-zinc-950/10 pb-12">
                             <h2 className="text-base font-semibold leading-7 text-gray-900">Nuevo producto</h2>
@@ -90,6 +93,27 @@ export default function FormProduct () {
                                         className="block w-full rounded-md border-0 py-1.5 text-zinc-950 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus-within:ring-blue-500 sm:text-sm sm:leading-6"
                                         placeholder="Ej. $100.00"
                                         />
+                                    </div>
+                                </div>
+                                <div className="col-span-full">
+                                    <label htmlFor="photos" className="block text-sm font-medium leading-6 text-zinc-950">
+                                        Fotografías:
+                                    </label>
+                                    <div className="mt-2 flex justify-center rounded-lg border border-dashed border-zinc-900/25 px-6 py-10">
+                                        <div className="text-center">
+                                        <PhotoIcon className="mx-auto h-12 w-12 text-gray-300" aria-hidden="true" />
+                                        <div className="mt-4 flex text-sm leading-6 text-gray-600">
+                                            <label
+                                            htmlFor="photos"
+                                            className="relative cursor-pointer rounded-md bg-white font-semibold text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 hover:text-blue-500"
+                                            >
+                                            <span>Subir archivo</span>
+                                            <input id="photos" name="photos" multiple={true} type="file" className="sr-only" />
+                                            </label>
+                                            <p className="pl-1">o arrastra y pega</p>
+                                        </div>
+                                        <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
