@@ -53,3 +53,28 @@ export async function get (url, data) {
         }
     });
 }
+
+export async function postNotForm (url, data) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            await fetch(`${api}${url}`,{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+                },{ cache: 'no-store' }
+            )
+            .then((res) => {  
+                res = res.json();
+                resolve(res);
+            })
+            .then((error) => {  
+                reject(error)
+            })
+    
+        } catch (e) {
+            console.log("Error**", e);
+        }
+    });
+}

@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { PlusIcon, PencilIcon, TrashIcon, ArrowPathIcon } from "@heroicons/react/24/outline";
 import { useEffect, useState } from "react";
-import { get } from "./../../content/shared/httpservice";
+import { get, postNotForm } from "./../../content/shared/httpservice";
 import SkeletonTable from "../shared/components/SkeletonTable";
+import { Success, Error, Loading, Close, Question } from "./../shared/sweetalert";
 
 
 export default function ProductList () {
@@ -26,6 +27,27 @@ export default function ProductList () {
         } catch (e) {
             return e
         }
+    }
+
+    const DeleteProduct = (product) => {
+        Question("¿Desea eliminar el producto?", product.name, async (result) => {
+            if (result) {
+                Loading("Eliminando...", "Espere un momento por favor");
+
+                postNotForm("/api/v1/products/post/delete", product)
+                    .then(res => {
+                        Close();
+                        
+                        if (res.success) {
+                            Success("¡Éxito!", res.msg);
+                            setSkeleton(true);
+                        } else {
+                            Error("Ocurrió un error!", response.msg);
+                        }
+                    
+                    })
+            }
+        });
     }
 
     return (
@@ -116,7 +138,8 @@ export default function ProductList () {
                                     <button className="flex items-center justify-center rounded-lg font-medium text-gray-500 border-2 border-gray-400 p-2 hover:text-gray-600 hover:border-gray-600 hover:bg-gray-300">
                                         <PencilIcon className="h-4 w-4" />
                                     </button>
-                                    <button className="flex items-center justify-center rounded-lg font-medium text-gray-500 border-2 border-gray-400 p-2 hover:text-gray-600 hover:border-gray-600 hover:bg-gray-300">
+                                    <button className="flex items-center justify-center rounded-lg font-medium text-gray-500 border-2 border-gray-400 p-2 hover:text-gray-600 hover:border-gray-600 hover:bg-gray-300"
+                                    onClick={() => DeleteProduct(item)}>
                                         <TrashIcon className="h-4 w-4" />
                                     </button>
                                 </div>
