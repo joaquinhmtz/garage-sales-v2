@@ -1,4 +1,7 @@
 {
-  "/app/content/products/form/page": "app/app/content/products/form/page.js",
-  "/app/content/products/page": "app/app/content/products/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/app/login/page": "app/app/login/page.js",
+  "/sales/page": "app/sales/page.js",
+  "/app/content/products/page": "app/app/content/products/page.js",
+  "/app/content/products/form/page": "app/app/content/products/form/page.js"
 }
