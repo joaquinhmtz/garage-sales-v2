@@ -1,4 +1,4 @@
-const api = "http://localhost:5001";
+const api = "https://garage-sales-v2-api.vercel.app";
 
 export async function post (url, data) {
     return new Promise(async (resolve, reject) => {
